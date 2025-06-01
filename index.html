@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery Charging Detector</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-battery-three-quarters"></i> Battery Monitor</h1>
+            <p>Real-time battery level and charging status detector</p>
+        </header>
+
+        <main>
+            <!-- Battery Status Display -->
+            <div class="battery-container">
+                <div class="battery-shell">
+                    <div class="battery-level" id="batteryLevel"></div>
+                    <div class="battery-tip"></div>
+                </div>
+                <div class="charging-indicator" id="chargingIndicator">
+                    <i class="fas fa-bolt" id="chargingIcon"></i>
+                </div>
+            </div>
+
+            <!-- Battery Information -->
+            <div class="info-panel">
+                <div class="info-item">
+                    <span class="label">Battery Level:</span>
+                    <span class="value" id="batteryPercentage">--</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Charging Status:</span>
+                    <span class="value" id="chargingStatus">--</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Charging Time:</span>
+                    <span class="value" id="chargingTime">--</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Discharging Time:</span>
+                    <span class="value" id="dischargingTime">--</span>
+                </div>
+            </div>
+
+            <!-- Warning Alert -->
+            <div class="alert-container" id="alertContainer">
+                <div class="alert warning" id="warningAlert">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div class="alert-content">
+                        <h3>Battery Over 90%!</h3>
+                        <p>Please unplug the charger to prevent overcharging.</p>
+                    </div>
+                    <button class="dismiss-btn" id="dismissBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Status Messages -->
+            <div class="status-panel">
+                <div class="status-message" id="statusMessage">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Initializing battery monitoring...</span>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button class="btn primary" id="refreshBtn">
+                    <i class="fas fa-sync-alt"></i>
+                    Refresh Status
+                </button>
+                <button class="btn secondary" id="testAlertBtn">
+                    <i class="fas fa-volume-up"></i>
+                    Test Voice Alert
+                </button>
+                <button class="btn secondary" id="toggleSoundBtn">
+                    <i class="fas fa-volume-up" id="soundIcon"></i>
+                    <span id="soundText">Sound On</span>
+                </button>
+            </div>
+
+            <!-- Troubleshooting Guide -->
+            <div class="troubleshooting" id="troubleshootingPanel">
+                <h3><i class="fas fa-tools"></i> Troubleshooting Guide</h3>
+                <div class="troubleshooting-content">
+                    <div class="issue">
+                        <h4>Battery API Not Supported</h4>
+                        <ul>
+                            <li>This feature requires a modern browser (Chrome, Edge, Opera)</li>
+                            <li>Firefox has limited support</li>
+                            <li>Safari does not support this API</li>
+                            <li>Try using Chrome or Edge for best compatibility</li>
+                        </ul>
+                    </div>
+                    <div class="issue">
+                        <h4>Voice Alerts Not Working</h4>
+                        <ul>
+                            <li>Ensure your browser allows audio playback</li>
+                            <li>Check if your device's volume is turned up</li>
+                            <li>Some browsers require user interaction before playing audio</li>
+                            <li>Try clicking the "Test Voice Alert" button</li>
+                        </ul>
+                    </div>
+                    <div class="issue">
+                        <h4>Inaccurate Battery Readings</h4>
+                        <ul>
+                            <li>Battery API may not be available on all devices</li>
+                            <li>Some laptops may show cached battery information</li>
+                            <li>Try refreshing the page or restarting your browser</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with HTML5 Battery Status API and Web Speech API</p>
+            <p>For educational purposes - Step-by-step development approach</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
